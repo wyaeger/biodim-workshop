@@ -1,2 +1,4 @@
 # biodim-workshop
-Repo for my bioinformatics workshop at the Feb 2025 BIODIM molecular bootcamp
+Repo for the metagenomics workshop at the BIODIM/SATREPS molecular techniques course, taught at UNAS in February 2025.
+
+This workshop uses data and code from the [Bioinformatic Methods for Biodiversity Metabarcoding tutorial.]([url](https://learnmetabarcoding.github.io/LearnMetabarcoding/index.html))
