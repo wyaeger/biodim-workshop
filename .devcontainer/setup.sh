@@ -84,8 +84,13 @@ sudo Rscript -e "install.packages(c('getopt', 'ape', 'fastcluster'), repos = 'ht
 sudo curl -sL cpanmin.us | sudo perl - git://github.com/sestaton/Pairfq.git
 
 # Install PEAR (Requires manual download and setup by user)
+# Users must manually download PEAR from its official website and place it in their home directory.
+# Navigate to https://sco.h-its.org/exelixis/web/software/pear/ and sign up for an academic license.
+# Once you receive the email with the download link, download the appropriate PEAR version.
+# After downloading, run the following commands:
+#
 # cd /usr/local/src/
-# sudo cp ~/pear-0.9.11-linux-x86_64.tar.gz ./
+# sudo cp ~/pear-0.9.11-linux-x86_64.tar.gz ./   # Change the source path if necessary
 # sudo tar -xzf pear-0.9.11-linux-x86_64.tar.gz
 # cd pear-0.9.11-linux-x86_64
 # sudo cp bin/pear /usr/local/bin/
