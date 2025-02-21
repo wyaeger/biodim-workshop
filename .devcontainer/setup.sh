@@ -4,6 +4,7 @@ set -e
 # Set up directories
 sudo mkdir -p /usr/local/deb/
 sudo mkdir -p /usr/local/src/
+sudo mkdir -p /workspaces/biodim-workshop/data
 
 # Update installed packages
 sudo apt update && sudo apt upgrade -y
@@ -12,6 +13,22 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install -y rename zip unzip curl wget nano build-essential pkg-config autoconf \
     python3-pip perl-doc default-jre libgsl-dev libdbd-sqlite3-perl libxml2-dev libssl-dev \
     libcurl4-openssl-dev apt-transport-https r-base autoconf groff
+
+# Download datasets
+cd /workspaces/biodim-workshop/data
+wget http://learnmetabarcoding.github.io/LearnMetabarcoding/data/sectionA.zip
+wget http://learnmetabarcoding.github.io/LearnMetabarcoding/data/sectionB.zip
+wget http://learnmetabarcoding.github.io/LearnMetabarcoding/data/sectionC.zip
+wget http://learnmetabarcoding.github.io/LearnMetabarcoding/data/sectionD.zip
+wget http://learnmetabarcoding.github.io/LearnMetabarcoding/data/sectionE.zip
+
+# Unzip datasets
+unzip sectionA.zip -d sectionA
+unzip sectionB.zip -d sectionB
+unzip sectionC.zip -d sectionC
+unzip sectionD.zip -d sectionD
+unzip sectionE.zip -d sectionE
+rm sectionA.zip sectionB.zip sectionC.zip sectionD.zip sectionE.zip
 
 # Install BLAST
 BLAST_VERSION="2.11.0"
@@ -82,20 +99,6 @@ sudo Rscript -e "install.packages(c('getopt', 'ape', 'fastcluster'), repos = 'ht
 
 # Install Pairfq
 sudo curl -sL cpanmin.us | sudo perl - git://github.com/sestaton/Pairfq.git
-
-# Install PEAR (Requires manual download and setup by user)
-# Users must manually download PEAR from its official website and place it in their home directory.
-# Navigate to https://sco.h-its.org/exelixis/web/software/pear/ and sign up for an academic license.
-# Once you receive the email with the download link, download the appropriate PEAR version.
-# After downloading, run the following commands:
-#
-# cd /usr/local/src/
-# sudo cp ~/pear-0.9.11-linux-x86_64.tar.gz ./   # Change the source path if necessary
-# sudo tar -xzf pear-0.9.11-linux-x86_64.tar.gz
-# cd pear-0.9.11-linux-x86_64
-# sudo cp bin/pear /usr/local/bin/
-# sudo gzip man/pear.1
-# sudo cp man/pear.1.gz /usr/share/man/man1/
 
 # Install phylostuff
 cd /usr/local/src
