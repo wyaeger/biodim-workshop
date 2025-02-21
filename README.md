@@ -4,46 +4,78 @@ Repo for the metagenomics workshop at the BIODIM/SATREPS molecular techniques co
 This workshop uses data and code from the **[Bioinformatic Methods for Biodiversity Metabarcoding tutorial]([url](https://learnmetabarcoding.github.io/LearnMetabarcoding/index.html))**
 
 
-**Instructions for Students to Access the GitHub Codespace:**
+# Instrucciones para que los estudiantes accedan al GitHub Codespace
 
-Welcome to the bioinformatics workshop! To access and work within the pre-configured coding environment, follow the steps below:
+¡Bienvenidos al taller de bioinformática! Para acceder y trabajar en el entorno de codificación preconfigurado, sigue los siguientes pasos:
 
-**1. Ensure You Have a GitHub Account.** Before accessing the Codespace, you need a GitHub account. If you don’t already have one, sign up at https://github.com/.
+## 1. Asegúrate de tener una cuenta en GitHub
+Antes de acceder a Codespace, necesitas una cuenta de GitHub. Si aún no tienes una, regístrate en [https://github.com/](https://github.com/).
 
-**2. Access the Workshop Repository.** Open a web browser and navigate to the GitHub repository containing the workshop materials.
-Click the "Code" button near the top right of the repository page.
-Select the "Codespaces" tab.
-Click "Create codespace on main" (or a different branch if instructed).
+## 2. Accede al repositorio del taller
+1. Abre un navegador web y dirígete al **repositorio de GitHub** que contiene los materiales del taller.
+2. Haz clic en el botón **"Code"** cerca de la parte superior derecha de la página del repositorio.
+3. Selecciona la pestaña **"Codespaces"**.
+4. Haz clic en **"Create codespace on main"** (o en otra rama si se indica).
 
-**3. Wait for the Codespace to Initialize.** The Codespace may take a couple of minutes to set up.
-Once loaded, you will see a VS Code interface running in your browser.
+## 3. Espera a que Codespace se inicialice
+- Puede tardar unos minutos en configurarse.
+- Una vez cargado, verás una interfaz de **VS Code** ejecutándose en tu navegador.
 
-**4. Verify the Setup.** To ensure everything is installed correctly:
-Open the terminal in the Codespace by clicking "Terminal" > "New Terminal" from the menu bar.
-Run the following command to check for installed tools:
-fastqc --version
-blastn -version
-vsearch --version
+## 4. Verifica la configuración
+Para asegurarte de que todo está instalado correctamente:
+1. Abre el **terminal** en Codespace haciendo clic en **"Terminal" > "New Terminal"** en la barra de menú.
+2. Ejecuta el siguiente comando para comprobar las herramientas instaladas:
+   ```bash
+   fastqc --version
+   blastn -version
+   vsearch --version
+   ```
+3. Navega hasta el directorio de datos:
+   ```bash
+   cd /workspaces/biodim-workshop/data
+   ls
+   ```
+   Deberías ver los archivos de datos descargados y extraídos.
 
-Navigate to the dataset directory:
-cd /workspaces/biodim-workshop/data
-ls
+## 5. Ejecutar comandos de bioinformática
+- Usa el **terminal** para ejecutar herramientas de bioinformática como FastQC, BLAST y VSEARCH.
+- Ejemplo de comando:
+   ```bash
+   fastqc sectionA/*.fastq
+   ```
 
-You should see the downloaded and extracted dataset files.
+## 6. Guardar tu trabajo
+- Cualquier cambio que realices dentro de Codespace es **temporal**, a menos que lo confirmes en GitHub.
+- Si es necesario, usa Git para confirmar y subir cambios:
+   ```bash
+   git add .
+   git commit -m "Progreso de mi análisis"
+   git push origin main
+   ```
 
-**5. Running Bioinformatics Commands.** Use the terminal to run bioinformatics tools such as FastQC, BLAST, and VSEARCH.
-Example command:
-fastqc sectionA/*.fastq
+## 7. Actualizar el Codespace con los últimos cambios
+Si el instructor ha actualizado el repositorio y deseas obtener los cambios más recientes en tu Codespace, sigue estos pasos:
+1. Asegúrate de estar en la rama principal:
+   ```bash
+   git checkout main
+   ```
+2. Descarga los cambios más recientes del repositorio:
+   ```bash
+   git pull origin main
+   ```
+3. Si hay nuevos archivos, verifica su presencia con:
+   ```bash
+   ls
+   ```
 
-**6. Saving Your Work.** Any changes you make inside the Codespace are temporary unless committed to GitHub.
-If needed, use Git to commit and push changes:
-git add .
-git commit -m "My analysis progress"
-git push origin main
+## 8. Salir y reanudar tu Codespace
+- Puedes cerrar la ventana del navegador cuando termines; tu Codespace guardará su estado.
+- Para reanudarlo, regresa a la pestaña **Codespaces** del repositorio y vuelve a abrir tu sesión.
 
-**7. Exiting and Resuming Your Codespace.** You can close the browser window when finished—your Codespace will save its state.
-To resume, return to the repository’s Codespaces tab and reopen your session.
-
-**8. Troubleshooting.** If you encounter errors, try restarting the Codespace.
-If a tool is missing, reinstall it using:
-sudo apt update && sudo apt install <package-name>Contact the instructor for further assistance.
+## 9. Solución de problemas
+- Si encuentras errores, intenta reiniciar el Codespace.
+- Si falta alguna herramienta, reinstálala usando:
+   ```bash
+   sudo apt update && sudo apt install <nombre-del-paquete>
+   ```
+- Contacta al instructor para obtener más ayuda.
