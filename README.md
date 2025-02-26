@@ -3,7 +3,7 @@ Repo for the metagenomics workshop at the BIODIM/SATREPS molecular techniques co
 
 This workshop uses data, instructions, and code from the **[Bioinformatic Methods for Biodiversity Metabarcoding tutorial]([url](https://learnmetabarcoding.github.io/LearnMetabarcoding/index.html))**
 
-Link to my version of the tutorial: [[https://docs.google.com/document/d/1aq-8m4mQHkkgAbVmh6IZ-zF1U38PL3HHZfQuHQ3qcuY/edit?usp=sharing ](url)](https://docs.google.com/document/d/1aq-8m4mQHkkgAbVmh6IZ-zF1U38PL3HHZfQuHQ3qcuY/edit?usp=sharing)
+Link to my version of the tutorial: (https://docs.google.com/document/d/1aq-8m4mQHkkgAbVmh6IZ-zF1U38PL3HHZfQuHQ3qcuY/edit?usp=sharing)
 
 
 # Instrucciones para que los estudiantes accedan al GitHub Codespace
